@@ -3,13 +3,15 @@ import { useEffect, useState } from "react";
 
 function ImageItemPage() {
   const router = useRouter();
-  const [nameFromUrl, setNameFromUrl] = useState();
+  const [name, setName] = useState();
 
   useEffect(() => {
-    setNameFromUrl(router.query.imageId);
+    setName("check console..");
   }, []);
 
-  return <h1>{nameFromUrl}</h1>;
+  console.log(router.query.imageId);
+
+  return <h1>{name}</h1>;
 }
 
 export default ImageItemPage;

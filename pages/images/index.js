@@ -1,9 +1,14 @@
-import ImageItemPage from "./[imageId]";
+import { useEffect, useState } from "react";
+import ImageList from "../../components/image-list/imageList";
 
 function ImageListPage() {
+  useEffect(() => {
+    console.log("Hi from list..");
+  }, []);
+
   return (
     <div>
-      <h1>LiSt of all iMaGessSss..!</h1>
+      <ImageList />
     </div>
   );
 }

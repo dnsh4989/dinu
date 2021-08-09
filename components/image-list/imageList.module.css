@@ -1,0 +1,25 @@
+.imageContainer {
+  max-width: 100%;
+  height: auto;
+  margin: 40px;
+  column-count: 6;
+}
+
+.imgCol {
+  height: auto;
+  break-inside: avoid-column;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.imgCol img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+@media (max-width: 800px) {
+  .imageContainer {
+    column-count: 5;
+  }
+}
