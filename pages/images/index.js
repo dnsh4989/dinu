@@ -3,7 +3,7 @@ import ImageList from "../../components/image-list/imageList";
 
 function ImageListPage() {
   useEffect(() => {
-    console.log("Hi from list..");
+    console.log("Hi from list...");
   }, []);
 
   return (
