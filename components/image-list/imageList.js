@@ -122,7 +122,7 @@ function ImageList() {
       {images.map((item) => {
         return (
           <div key={item.id} className={styles.imgCol}>
-            <img src={item.url} />
+            <img className={styles.imgs} src={item.url} alt="WallZ" />
           </div>
         );
       })}

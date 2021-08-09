@@ -1,3 +1,15 @@
 module.exports = {
   reactStrictMode: true,
-}
+  eslint: { ignoreDuringBuilds: true },
+  images: {
+    domains: [
+      "c.stocksy.com",
+      "encrypted-tbn0.gstatic.com",
+      "www.computerhope.com",
+      "thumbs.dreamstime.com",
+      "randomwordgenerator.com",
+      "i.pinimg.com",
+      "images.unsplash.com",
+    ],
+  },
+};
