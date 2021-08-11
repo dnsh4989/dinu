@@ -13,12 +13,4 @@ module.exports = {
       "images.unsplash.com",
     ],
   },
-  async rewrites() {
-    return [
-      {
-        source: "/images/:path*",
-        destination: "https://dinu-node.herokuapp.com//:path*",
-      },
-    ];
-  },
 };

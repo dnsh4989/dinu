@@ -10,22 +10,24 @@ import { useEffect, useState } from "react";
 //   };
 // }
 
-const getData = async () => {
-  const res = await fetch("https://dinu-node.herokuapp.com/images/");
-  const data = await res.json();
-
-  return data;
-};
-
 const ImageList = () => {
   let res;
   const [images, setImages] = useState();
+
+  const getData = async () => {
+    const res = await fetch("https://dinu-node.herokuapp.com/images/");
+    const data = await res.json();
+
+    return data;
+  };
+
   useEffect(async () => {
     const list = await getData();
     setImages(list);
   }, []);
 
   console.log(images);
+
   if (images) {
     res = (
       <div className={styles.imageContainer}>
