@@ -21,9 +21,6 @@ export const getStaticProps = async () => {
 // };
 
 const ImageList = ({ images }) => {
-  const testRes = testData();
-  console.log(testRes.body);
-
   let res;
   if (images) {
     res = (
