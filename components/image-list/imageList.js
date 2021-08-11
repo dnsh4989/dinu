@@ -1,27 +1,31 @@
 import styles from "./imageList.module.css";
+import { useEffect, useState } from "react";
 
-export async function getStaticProps(context) {
-  const res = await fetch("https://dinu-node.herokuapp.com/images/");
-  const data = await res.json();
-
-  console.log(data);
-
-  return {
-    props: { images: data },
-  };
-}
-
-// const testData = async () => {
+// export async function getStaticProps() {
 //   const res = await fetch("https://dinu-node.herokuapp.com/images/");
 //   const data = await res.json();
 
-//   console.log(data);
+//   return {
+//     props: { images: data },
+//   };
+// }
 
-//   return data;
-// };
+const getData = async () => {
+  const res = await fetch("https://dinu-node.herokuapp.com/images/");
+  const data = await res.json();
 
-const ImageList = ({ images }) => {
+  return data;
+};
+
+const ImageList = () => {
   let res;
+  const [images, setImages] = useState();
+  useEffect(async () => {
+    const list = await getData();
+    setImages(list);
+  }, []);
+
+  console.log(images);
   if (images) {
     res = (
       <div className={styles.imageContainer}>
@@ -35,7 +39,7 @@ const ImageList = ({ images }) => {
       </div>
     );
   } else {
-    res = <div className={styles.imageContainer}></div>;
+    res = <div className={styles.imageContainer}>No Images Found...</div>;
   }
   return res;
 };
