@@ -1,6 +1,6 @@
 import styles from "./imageList.module.css";
 
-export const getStaticProps = async () => {
+export async function getStaticProps(context) {
   const res = await fetch("https://dinu-node.herokuapp.com/images/");
   const data = await res.json();
 
@@ -9,7 +9,7 @@ export const getStaticProps = async () => {
   return {
     props: { images: data },
   };
-};
+}
 
 // const testData = async () => {
 //   const res = await fetch("https://dinu-node.herokuapp.com/images/");
