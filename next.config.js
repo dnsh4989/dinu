@@ -3,6 +3,7 @@ module.exports = {
   eslint: { ignoreDuringBuilds: true },
   images: {
     domains: [
+      "dinu-node.herokuapp.com",
       "c.stocksy.com",
       "encrypted-tbn0.gstatic.com",
       "www.computerhope.com",
@@ -11,5 +12,13 @@ module.exports = {
       "i.pinimg.com",
       "images.unsplash.com",
     ],
+  },
+  async rewrites() {
+    return [
+      {
+        source: "/images/:path*",
+        destination: "https://dinu-node.herokuapp.com//:path*",
+      },
+    ];
   },
 };

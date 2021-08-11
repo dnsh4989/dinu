@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useEffect, useState } from "react";
 import ImageList from "../../components/image-list/imageList";
 
@@ -8,6 +9,10 @@ function ImageListPage() {
 
   return (
     <div>
+      <Head>
+        <title>Dinesh Sanala | Images</title>
+        <meta name="keywords" content="dinesh sanala" />
+      </Head>
       <ImageList />
     </div>
   );
