@@ -15,9 +15,9 @@ function ImageListPage() {
         <title>Dinesh Sanala | Images</title>
         <meta name="keywords" content="dinesh sanala" />
       </Head>
-      <Link href="/add-image/">
+      {/* <Link href="/add-image/">
         <a className={styles.btn}>Add Image</a>
-      </Link>
+      </Link> */}
       <ImageList />
     </div>
   );

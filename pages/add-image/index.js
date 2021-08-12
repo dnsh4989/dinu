@@ -4,7 +4,7 @@ import styles from "../../styles/AddImage.module.css";
 
 function AddImagePage() {
   const [id, setId] = useState("");
-  const [tags, setTags] = useState([]);
+  const [tags, setTags] = useState("");
   const [url, setUrl] = useState("");
   const [date, setDate] = useState("");
 
