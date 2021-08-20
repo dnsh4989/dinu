@@ -1,5 +1,6 @@
 import styles from "./imageList.module.css";
 import { useEffect, useState } from "react";
+import ImageCard from "../image-card/imageCard";
 
 // export async function getStaticProps() {
 //   const res = await fetch("https://dinu-node.herokuapp.com/images/");
@@ -32,11 +33,7 @@ const ImageList = () => {
     res = (
       <div className={styles.imageContainer}>
         {images.map((item) => {
-          return (
-            <div key={item.id} className={styles.imgCol}>
-              <img className={styles.imgs} src={item.url} alt="WallZ" />
-            </div>
-          );
+          return <ImageCard key={item.id} image={item} />;
         })}
       </div>
     );

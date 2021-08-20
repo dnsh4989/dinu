@@ -51,7 +51,7 @@ function AddImagePage() {
         <meta name="keywords" content="dinesh sanala" />
       </Head>
 
-      <h3>Add Image</h3>
+      <h1 className={styles.addTitle}>Add Image</h1>
 
       <div className={styles.container}>
         <form>

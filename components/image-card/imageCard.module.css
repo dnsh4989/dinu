@@ -1,0 +1,64 @@
+.imgCol {
+  height: auto;
+  break-inside: avoid-column;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+.imgs {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.imageBlocker {
+  position: absolute;
+  height: 98%;
+  border-radius: 10px;
+  width: 100%;
+  background: #000;
+  opacity: 0.5;
+  display: none;
+}
+
+.imgCol:hover .downloadButton {
+  display: block;
+}
+.imgCol:hover .moreIcon {
+  display: block;
+}
+.imgCol:hover .imageBlocker {
+  display: block;
+}
+.downloadButton {
+  position: absolute;
+  background: #ea0121;
+  width: 45px;
+  height: 25px;
+  color: #f2f2f2;
+  align-items: center;
+  justify-content: center;
+  border-radius: 40px;
+  margin-top: 15px;
+  margin-right: 10px;
+  display: flex;
+  font-weight: 900;
+  font-size: 15px;
+  right: 0;
+  padding: 6px 0px 0px 4px;
+  display: none;
+}
+.moreIcon {
+  display: none;
+  position: absolute;
+  right: 10px;
+  bottom: 15px;
+  color: #000000;
+  padding: 5px 7px 3px;
+  background: #e5e5e5;
+  border-radius: 28px;
+  opacity: 0.7;
+}
