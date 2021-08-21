@@ -4,26 +4,32 @@ import { faSearch, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import Image from "next/image";
 import Authentication from "../auth/auth";
+import { useRouter } from "next/router";
 
 function Nav() {
   const userLoggedIn = Authentication.isLoggedIn;
+  const router = useRouter();
 
-  console.log(userLoggedIn);
+  const currentRoute = router.asPath;
 
   const authIcons = (
     <>
       {!userLoggedIn && (
         <span className="ml-auto">
-          <span className="nav-icons ml-auto sign-in display-inline-block">
-            <Link href="/login">
-              <span>SignIn</span>
-            </Link>
-          </span>
-          <span className="nav-icons ml-auto sign-in display-inline-block">
-            <Link href="/register">
-              <span>Register</span>
-            </Link>
-          </span>
+          {currentRoute !== "/login" && (
+            <span className="nav-icons ml-auto sign-in display-inline-block">
+              <Link href="/login">
+                <span>SignIn</span>
+              </Link>
+            </span>
+          )}
+          {currentRoute !== "/register" && (
+            <span className="nav-icons ml-auto sign-in display-inline-block">
+              <Link href="/register">
+                <span>Register</span>
+              </Link>
+            </span>
+          )}
         </span>
       )}
     </>

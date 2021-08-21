@@ -1,5 +1,6 @@
 import Footer from "../footer/footer";
 import Nav from "../nav";
+import UiBlocker from "../ui-blocker/ui-blocker";
 
 const Layout = ({ children }) => {
   return (
@@ -7,6 +8,7 @@ const Layout = ({ children }) => {
       <Nav />
       {children}
       <Footer />
+      <UiBlocker />
     </div>
   );
 };

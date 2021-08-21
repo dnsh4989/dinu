@@ -5,6 +5,7 @@ import Link from "next/link";
 import styles from "../../styles/Home.module.css";
 import Authentication from "../../auth/auth";
 import Axios from "axios";
+import Utils from "../../lib/utils";
 
 function LoginPage() {
   const [loginUsername, setLoginUsername] = useState("");
@@ -16,6 +17,7 @@ function LoginPage() {
   }, []);
 
   const login = () => {
+    Utils.setBlockUi(true);
     Axios({
       method: "POST",
       data: {
@@ -24,10 +26,19 @@ function LoginPage() {
       },
       withCredentials: true,
       url: "https://dinu-node.herokuapp.com/login/",
-    }).then((res) => {
-      console.log(res);
-      Authentication.onAuthentication();
-    });
+    }).then(
+      (res) => {
+        Utils.setBlockUi(false);
+        console.log(res);
+        alert(res);
+        Authentication.onAuthentication();
+      },
+      (err) => {
+        Utils.setBlockUi(false);
+        console.log(err);
+        alert(err);
+      }
+    );
   };
 
   return (

@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import ImageList from "../../components/image-list/imageList";
 import Link from "next/link";
 import styles from "../../styles/Home.module.css";
+import Utils from "../../lib/utils";
+import Axios from "axios";
 
 function RegisterPage() {
   const [registerUsername, setRegisterUsername] = useState("");
@@ -14,6 +16,7 @@ function RegisterPage() {
   }, []);
 
   const register = () => {
+    Utils.setBlockUi(true);
     Axios({
       method: "POST",
       data: {
@@ -22,7 +25,16 @@ function RegisterPage() {
       },
       withCredentials: true,
       url: "https://dinu-node.herokuapp.com/register/",
-    }).then((res) => console.log(res));
+    }).then(
+      (res) => {
+        Utils.setBlockUi(false);
+        console.log(res);
+      },
+      (err) => {
+        Utils.setBlockUi(false);
+        console.log(err);
+      }
+    );
   };
 
   return (
