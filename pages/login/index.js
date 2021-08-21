@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import ImageList from "../../components/image-list/imageList";
 import Link from "next/link";
 import styles from "../../styles/Home.module.css";
+import Authentication from "../../auth/auth";
 import Axios from "axios";
 
 function LoginPage() {
@@ -22,8 +23,11 @@ function LoginPage() {
         password: loginPassword,
       },
       withCredentials: true,
-      url: "https://dinu-node.herokuapp.com/signin/",
-    }).then((res) => console.log(res));
+      url: "https://dinu-node.herokuapp.com/login/",
+    }).then((res) => {
+      console.log(res);
+      Authentication.onAuthentication();
+    });
   };
 
   return (
