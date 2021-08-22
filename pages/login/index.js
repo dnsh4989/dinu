@@ -53,6 +53,7 @@ function LoginPage() {
             placeholder="E-mail"
             onChange={(e) => setLoginUsername(e.target.value)}
           />
+
           <input
             type="password"
             name="password"
